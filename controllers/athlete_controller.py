@@ -9,7 +9,7 @@ athlete_blueprint = Blueprint("athletes", __name__)
 @athlete_blueprint.route("/athletes")
 def athletes():
     athletes = athlete_repository.select_all()
-    return render_template("athlete/index.html"), athletes = athletets)
+    return render_template("athlete/index.html", athletes = athletes)
 
 @athlete_blueprint.route("/athlete/<id>")
 def show (id):
