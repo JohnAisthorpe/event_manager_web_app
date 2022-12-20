@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> {{ athlete.name }}</h1>
+
+<h3> Participants: </h3>
+<ul>
+    {% for athlete in athletes %}
+    <li> {{event.name}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
