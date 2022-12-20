@@ -1,0 +1,19 @@
+{% extents 'base.html' %}
+{% block content %}
+<h1>Events</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Sport</th>
+    </tr>
+
+    {% for event in events %}
+    <tr>
+        <td>
+            <a href="/events/{{ event.id"> {{event.name}}</a>
+        </td>
+        <td> {{ event.sport }} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
