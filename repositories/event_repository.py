@@ -32,3 +32,9 @@ def delete_all():
     sql = "DELETE FROM event"
     run_sql(sql)
 
+def event_participation(participation):
+    sql = "SELECT * FROM event WHERE id = %s"
+    values =[participation.event.id]
+    results = run_sql(sql, values)[0]
+    event = Event(results['name'], results['position'], results['id'])
+    return event
