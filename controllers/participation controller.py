@@ -12,4 +12,10 @@ def participation():
     participation = participation_repository.select_all()
     return render_template("participation/index.html", participation = participation)
 
-@participation 
+@participation_blueprint.route("/participation", methods = ['GET'])
+def new_participation():
+    athletes = athlete_repository.select_all()
+    events = event_repository.select_all()
+    return render_template("participation/new.html", athletes = athletes, events = events)
+
+@participation_blueprint
