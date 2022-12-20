@@ -1,15 +1,15 @@
-{% extents 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
-<h1> {{ event.name}} </h1>
+<h1> Athletes </h1>
 <table>
     <tr>
         <th>Name</th>
     </tr>
 
-    {% for event in events %}
+    {% for athlete in athletes %}
     <tr>
         <td>
-            <a href="/athletes/{{ athlete.id"> {{event.name}}</a>
+            <a href="/athletes/{{ athlete.id }}"> {{athlete.name}}</a>
         </td>
     </tr>
     {% endfor %}
