@@ -25,7 +25,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        location = Event(result['name'], result['sport'], result['id'])
+        event = Event(result['name'], result['sport'], result['id'])
     return event
 
 def delete_all():

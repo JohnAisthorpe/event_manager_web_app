@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.event import Event
-import repositories.event_repository as event_repository
 import repositories.athlete_repository as athlete_repository
+import repositories.event_repository as event_repository
 
-event_blueprint = Blueprint("/events", __name__)
+
+event_blueprint = Blueprint("events", __name__)
 
 @event_blueprint.route("/events")
 def events():
