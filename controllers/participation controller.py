@@ -12,10 +12,21 @@ def participation():
     participation = participation_repository.select_all()
     return render_template("participation/index.html", participation = participation)
 
+# enter new participation
 @participation_blueprint.route("/participation", methods = ['GET'])
 def new_participation():
     athletes = athlete_repository.select_all()
     events = event_repository.select_all()
     return render_template("participation/new.html", athletes = athletes, events = events)
 
-@participation_blueprint
+# submit new participation
+@participation_blueprint.route("/participation", methods = ['POST'])
+def create_participation():
+    athlete_id = request.form['athlete_id']
+    event_id = request.form['event_id']
+    position = request.form['position']
+    athlete = athlete_repository.select(athlete_id)
+    event = event_repository.select(event_id)
+    participation = Participation(athlete, event, position)
+    participation_repository.save(participation)
+    return redirect('/participation')
