@@ -41,3 +41,8 @@ def athlete_event(event):
     for row in results:
         athlete = Athlete(row['name'], row['id'])
         athletes.append(athlete)
+
+def update(athlete):
+    sql = "UPDATE athlete SET name = %s WHERE id = %s"
+    values = [athlete.name, athlete.id]
+    run_sql(sql, values)

@@ -42,18 +42,16 @@ def create_athlete():
 
 # edit page
 @athlete_blueprint.route("/athletes/<id>/edit", methods=['GET'])
-def edit_task(id):
+def edit_athlete(id):
     athlete = athlete_repository.select(id)
-    return render_template('athlets/edit.html', athlete = athlete)
+    return render_template('athletes/edit.html', athlete = athlete)
 
 # submit edit (update)
 @athlete_blueprint.route("/athletes/<id>", methods=['POST'])
 
 def update_athlete(id):
     name = request.form['name']
-    athlete_id = request.form['athlete_id']
-    athlete = athlete_repository.select(athlete_id)
-    athlete = Athlete(name)
+    athlete = Athlete(name, id)
     athlete_repository.update(athlete)
     return redirect('/athletes')
 
