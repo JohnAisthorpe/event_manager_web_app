@@ -3,8 +3,9 @@
 
 <form action="/participation" method = "post">
     <label for="athlete"> Select an athlete:</label>
-    <select name="athlete_id" id="athlete"> {% for athlete in athletes %}
-        <option value="{{ athlete.id ">{{ athlete.name }} </option>
+
+    <select name="athlete_id" id="athlete"> {% for name in athlete %}
+        <option value="{{ athlete.id}} ">{{ athlete.name }} </option>
         {% endfor %}
     </select>
 
@@ -15,7 +16,7 @@
     </select>
 
     <label for="position">Add a Position</label>
-    <textarea name="position" id="position" cols="30" rows="10"></textarea>
+    <textarea name="position" id="position" cols="30" rows="1"></textarea>
     <input type="submit" value="Participation">
 </form>
 

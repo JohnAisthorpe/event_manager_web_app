@@ -31,3 +31,13 @@ def delete(id):
     sql = "DELETE FROM participation WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def athlete_event(event):
+    athletes = []
+    sql = "SELECT athlete.* FROM athlete INNER JOIN participation ON Participation.athlete_id = athlete.id WHERE event_id = %s"
+    values = [event.id]
+    results = run_sql(sql, values)
+    for row in results:
+        athlete = Athlete(row['name'], row['id'])
+        athletes.append(athlete)
+    return athletes

@@ -12,21 +12,48 @@ def participation():
     participation = participation_repository.select_all()
     return render_template("participation/index.html", participation = participation)
 
-# enter new participation
-@participation_blueprint.route("/participation", methods = ['GET'])
-def new_participation():
-    athletes = athlete_repository.select_all()
-    events = event_repository.select_all()
-    return render_template("participation/new.html", athletes = athletes, events = events)
 
-# submit new participation
-@participation_blueprint.route("/participation", methods = ['POST'])
+# NEW participation
+# GET '/participation/new'
+@participation_blueprint.route("/participation/new", methods=['GET'])
+def new_participation():
+    athlete = athlete_repository.select_all()
+    event = event_repository.select_all()
+    return render_template("participation/new.html", athlete = athlete, event = event)
+
+# CREATE
+# POST '/participation'
+@participation_blueprint.route("/participation",  methods=['POST'])
 def create_participation():
     athlete_id = request.form['athlete_id']
     event_id = request.form['event_id']
-    position = request.form['position']
+    position = position.form['review']
     athlete = athlete_repository.select(athlete_id)
     event = event_repository.select(event_id)
     participation = Participation(athlete, event, position)
     participation_repository.save(participation)
     return redirect('/participation')
+
+# # new participation form
+# @participation_blueprint.route("/participation/new", methods = ['GET'])
+# def new_participation():
+#     participation = participation_repository.select_all()
+#     return render_template("participation/new.html", participation =participation)
+
+# # new event submit 
+# @participation_blueprint.route("/participation", methods=['POST'])
+# def create_participation():
+    
+#     # Extract the request data
+#     athlete = request.form.get('athlete')
+#     event = request.form.get('event')
+#     position = request.form.get('position')
+
+#     # Create a new participation object
+#     participation = Participation(athlete=athlete, event=event, position= position)
+
+#     # Add the participation to the database
+#     participation_repository.save(participation)
+
+#     # Return a response with the new participation information
+#     return redirect('/participation')
