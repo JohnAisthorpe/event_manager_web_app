@@ -8,7 +8,8 @@
     </tr>
     <!-- new athlete link -->
     <td>
-        <a href="/events/new">New event</a>
+        
+        <button type="button" onclick="window.location.href='/events/new'">New event</button>
 
     </td>
     
@@ -20,7 +21,7 @@
         </td>
         <td> {{ event.sport }}</td>
         <td>
-            <a href="/events/{{ event.id }}/edit">Edit event</a>
+            <button type="button" onclick="window.location.href='/events/{{ event.id }}/edit'">Edit event</button>
     
         </td>
     </tr>
