@@ -36,7 +36,7 @@ def event_participation(participation):
     sql = "SELECT * FROM event WHERE id = %s"
     values =[participation.event.id]
     results = run_sql(sql, values)[0]
-    event = Event(results['name'], results['position'], results['id'])
+    event = Event(results['name'], results['id'])
     return event
 
 def update(event):

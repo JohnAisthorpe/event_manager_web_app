@@ -27,10 +27,9 @@ def new_participation():
 def create_participation():
     athlete_id = request.form['athlete_id']
     event_id = request.form['event_id']
-    position = request.form['position']
     athlete = athlete_repository.select(athlete_id)
     event = event_repository.select(event_id)
-    participation = Participation(athlete, event, position)
+    participation = Participation(athlete, event)
     participation_repository.save(participation)
     return redirect('/participation')
 
@@ -47,10 +46,8 @@ def create_participation():
 #     # Extract the request data
 #     athlete = request.form.get('athlete')
 #     event = request.form.get('event')
-#     position = request.form.get('position')
 
 #     # Create a new participation object
-#     participation = Participation(athlete=athlete, event=event, position= position)
 
 #     # Add the participation to the database
 #     participation_repository.save(participation)

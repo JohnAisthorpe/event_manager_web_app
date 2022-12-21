@@ -28,5 +28,5 @@ event_repository.save(event2)
 
 
 
-participation1 = Participation(athlete1, event1, 7)
+participation1 = Participation(athlete1, event1)
 participation_repository.save(participation1)

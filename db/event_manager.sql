@@ -19,6 +19,5 @@ CREATE TABLE event (
 CREATE TABLE participation (
   id SERIAL PRIMARY KEY,
   athlete_id INT NOT NULL REFERENCES athlete(id) ON DELETE CASCADE,
-  event_id INT NOT NULL REFERENCES event(id) ON DELETE CASCADE,
-  position INT
+  event_id INT NOT NULL REFERENCES event(id) ON DELETE CASCADE
 );
