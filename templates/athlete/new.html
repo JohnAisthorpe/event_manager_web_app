@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="/athletes" method = "post">
+    <label for="name">Add athlete name</label>
+    <textarea name="athlete" id="name" cols="30" rows="1"></textarea>
+    <input type="submit" value="Athlete">
+</form>
+
+{% endblock %}

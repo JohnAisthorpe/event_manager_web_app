@@ -16,3 +16,18 @@ def show (id):
     athlete = athlete_repository.select(id)
     events = event_repository.event_participation(athlete)
     return render_template('athlete/show.html', athlete = athlete)
+
+# new athlete form
+@athlete_blueprint.route("/athletes/new", methods = ['GET'])
+def new_athlete():
+    athletes = athlete_repository.select_all()
+    events = event_repository.select_all()
+    return render_template("athletes/new.html", athletes = athletes, events = events)
+
+# new athlete submit 
+@athlete_blueprint.route("/athletes", methods=['POST'])
+def create_athlete():
+    athletes = athlete_repository.select_all()
+    events = event_repository.select_all
+    return render_template("athletes/new.html", athletes = athletes)
+
