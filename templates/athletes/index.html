@@ -14,9 +14,13 @@
     {% for athlete in athletes %}
     <tr>
         <td>
-            <a href="/athletes/{{ athlete.id }}"> {{athlete.name}}</a>
+            <a href="/athletes/{{ athlete.id }}"> {{athlete.name}}</a>  <form action="/athletes/{{ athlete.id }}/edit" method="post">
+                <input type="submit" value="Edit athlete">
+                </form>
         </td>
     </tr>
+   
     {% endfor %}
 </table>
 {% endblock %}
+

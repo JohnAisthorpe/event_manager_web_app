@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/athletes/{{ athlete.id }}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ athlete.name }}">
+  </div>
+
+  <button type="submit">Update athlete name</button>
+
+</form>
+
+{% endblock %}
