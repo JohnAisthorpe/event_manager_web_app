@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/events/{{ event.id }}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ event.name }}">
+  </div>
+
+  <div>
+    <label for="sport">sport:</label>
+    <input type="text" id="sport" name="sport" value="{{ event.sport }}">
+  </div>
+
+  <button type="submit">Update event</button>
+
+</form>
+
+{% endblock %}

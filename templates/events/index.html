@@ -11,6 +11,7 @@
         <a href="/events/new">New event</a>
 
     </td>
+    
 
     {% for event in events %}
     <tr>
@@ -18,6 +19,10 @@
             <a href="/events/{{ event.id }}"> {{event.name}} </a>
         </td>
         <td> {{ event.sport }}</td>
+        <td>
+            <a href="/events/{{ event.id }}/edit">Edit event</a>
+    
+        </td>
     </tr>
     {% endfor %}
 </table>

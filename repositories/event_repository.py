@@ -38,3 +38,8 @@ def event_participation(participation):
     results = run_sql(sql, values)[0]
     event = Event(results['name'], results['position'], results['id'])
     return event
+
+def update(event):
+    sql = "UPDATE event SET (name, sport) = (%s, %s) WHERE id = %s"
+    values = [event.name, event.sport, event.id]
+    run_sql(sql, values)

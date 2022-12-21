@@ -40,3 +40,19 @@ def create_athlete():
 
     # Return a response with the new athlete's information
     return redirect('/events')
+
+# edit page
+@event_blueprint.route("/events/<id>/edit", methods=['GET'])
+def edit_athlete(id):
+    event = event_repository.select(id)
+    return render_template('events/edit.html', event = event)
+
+# submit edit (update)
+@event_blueprint.route("/events/<id>", methods=['POST'])
+
+def update_athlete(id):
+    name = request.form['name']
+    sport = request.form['sport']
+    event = Event(name, sport, id)
+    event_repository.update(event)
+    return redirect('/events')
