@@ -43,3 +43,13 @@ def update(event):
     sql = "UPDATE event SET (name, sport) = (%s, %s) WHERE id = %s"
     values = [event.name, event.sport, event.id]
     run_sql(sql, values)
+
+def event_athlete(athlete):
+    events = []
+    sql = "SELECT event.* FROM event INNER JOIN participation ON Participation.event_id = event.id WHERE athlete_id = %s"
+    values = [athlete.id]
+    results = run_sql(sql, values)
+    for row in results:
+        event = Event(row['name'], row['sport'], row['id'])
+        events.append(event)
+    return events

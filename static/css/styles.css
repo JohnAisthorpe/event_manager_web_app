@@ -5,6 +5,15 @@ nav ul {
     flex-direction: column;
     align-items: center;
   }
+
+  nav ul li a:hover {
+    padding: 3px;
+    font-size: ;
+    font-family: sans-serif;
+    color: blue;
+    background-color: lightgray;
+  }
+  
   
   body > h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -12,5 +21,3 @@ nav ul {
     justify-content: center;
   }
 
-
-  

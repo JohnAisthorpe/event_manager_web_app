@@ -23,9 +23,8 @@ def select(id):
     athlete = None
     sql = "SELECT * FROM athlete WHERE id = %s"
     values = [id]
-    results = run_sql(sql, values)
-    if results:
-        result = results[0]
+    result = run_sql(sql, values)[0]
+    if result is not None:
         athlete = Athlete(result['name'], result['id'])
     return athlete
 

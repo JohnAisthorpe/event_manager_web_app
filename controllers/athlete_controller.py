@@ -11,11 +11,11 @@ def athletes():
     athletes = athlete_repository.select_all()
     return render_template("athletes/index.html", athletes = athletes)
 
-@athlete_blueprint.route("/athlete/<id>")
-def show (id):
+@athlete_blueprint.route("/athletes/<id>")
+def show(id):
     athlete = athlete_repository.select(id)
-    events = event_repository.event_participation(athlete)
-    return render_template('athletes/show.html', athlete = athlete)
+    events = event_repository.event_athlete(athlete)
+    return render_template("athletes/show.html", event = events, athlete = athlete)
 
 # new athlete form
 @athlete_blueprint.route("/athletes/new", methods = ['GET'])

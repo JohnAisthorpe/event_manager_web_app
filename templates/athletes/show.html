@@ -3,9 +3,11 @@
 
 <h1> {{ athlete.name }}</h1>
 
-<h3> Participants: </h3>
+
+<h3> events booked: </h3>
+
 <ul>
-    {% for athlete in athletes %}
+    {% for event in events %}
     <li> {{event.name}}</li>
     {% endfor %}
 </ul>
