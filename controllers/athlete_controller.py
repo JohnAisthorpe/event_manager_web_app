@@ -29,15 +29,16 @@ def new_athlete():
 def create_athlete():
     
     # Extract the request data
-    name = request.form('name')
+    name = request.form.get('name')
 
     # Create a new athlete object
-    athlete = Athlete(name)
+    athlete = Athlete(name=name)
 
     # Add the athlete to the database
     athlete_repository.save(athlete)
 
     # Return a response with the new athlete's information
     return redirect('/athletes')
+
 
 
