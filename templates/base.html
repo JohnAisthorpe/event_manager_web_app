@@ -8,24 +8,25 @@
     <title>Event Manager</title>
 </head>
 <body>
+<header>
     <h1 id="grid-container">Event Manager</h1>
-<main>
+
     <nav id="grid-container">
         <ul>
             <li>
-                <li><a href="/">Home</a></li>
+                <li> <button type="button" onclick="window.location.href='/'"  class="home-btn">Home</button></li>
+               
             </li>
             <li>
-                <a href="/events">Events</a>
+                <button type="button" onclick="window.location.href='/events'"  >Events</button>
             </li>
             <li>
-                <a href="/athletes">Athletes</a>
-            </li>
-            <li>
-                <a href="/participation">Participation</a>
+                <button type="button" onclick="window.location.href='/athletes'"  >Athletes</button>
             </li>
         </ul>
     </nav>
+</header>
+<main>
     <section>
         {% block content%}
 

@@ -1,35 +1,91 @@
-nav ul {
-    /* get rid of bulletpoints */
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    grid-area: menu;
-  }
+header {
+  display: flex;
+  align-items: center;
+}
 
-  nav ul li a:hover {
+/* Navigation */
+nav ul {
+  /* Remove bullet points */
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 19.92px;
+  color: black;
+  grid-area: nav;
+}
+
+nav ul li button:hover {
+  /* Style for hovering over links */
+  padding: 3px;
+  font-size: ;
+  font-family: sans-serif;
+  color: black;
+  background-color: lightgray;
+}
+
+nav ul li button {
+  /* Style for hovering over links */
+  padding: 6px;
+  font-size: ;
+  font-family: sans-serif;
+  color: black;
+  background-color: salmon;
+  border-radius: 5mm;
+  text-decoration: wavy;
+}
+
+/* Headline */
+body > h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  justify-content: left;
+  grid-area: title;
+  text-align: center;
+}
+
+/* Grid container */
+/* #grid-container {
+  display: grid;
+  grid-template-areas:
+    'title nav' ;
+  grid-template-columns: 2fr 2fr 7fr;
+} */
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.home-btn:hover {
+  background-color: #f1f1f1;
+  color: #ee8a14;
+  font-size: 1.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+  animation: spin 1s linear infinite;}
+
+.submit-btn {
+  background-color: #f1f1f1;
+  color: #ee8a14;
+  border: 5mm;
+  border-radius: 2mm;
+  font-size: 1.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 5mm;}
+
+  .submit-btn:hover {
     padding: 3px;
     font-size: ;
     font-family: sans-serif;
-    color: blue;
+    color: black;
     background-color: lightgray;
-  }
-  
-  
-  body > h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: flex;
-    justify-content: left;
-    grid-area: h1;
-  }
+    }
 
-  #grid-container {
-    display: grid;
-    grid-template-areas:
-      'h1 menu'
-      'menu main'
-      'footer footer';
-    grid-template-columns: 3fr 7fr;
-  }
-
+  

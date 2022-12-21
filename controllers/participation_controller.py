@@ -7,7 +7,7 @@ import repositories.event_repository as event_repository
 
 participation_blueprint = Blueprint("/participation", __name__)
 
-@participation_blueprint.route("/participation")
+@participation_blueprint.route("/")
 def participation():
     participations = participation_repository.select_all()
     return render_template("participation/index.html", participations = participations)
