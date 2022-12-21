@@ -10,7 +10,7 @@
     </select>
 
     <label for="events">Select an event:</label>
-    <select name="event.id" id="events">{% for event in events %}
+    <select name="event_id" id="events">{% for event in events %}
         <option value="{{ event.id }}" > {{ event.name }} </option>
         {% endfor %}
     </select>

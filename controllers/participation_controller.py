@@ -27,7 +27,7 @@ def new_participation():
 def create_participation():
     athlete_id = request.form['athlete_id']
     event_id = request.form['event_id']
-    position = position.form['position']
+    position = request.form['position']
     athlete = athlete_repository.select(athlete_id)
     event = event_repository.select(event_id)
     participation = Participation(athlete, event, position)
