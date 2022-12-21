@@ -15,5 +15,5 @@ def events():
 @event_blueprint.route("/events/<id>")
 def show(id):
     event = event_repository.select(id)
-    athlete = athlete_repository.event_participation(event)
+    athlete = athlete_repository.athlete_event(event)
     return render_template("events/show.html", event = event, athlete = athlete)
