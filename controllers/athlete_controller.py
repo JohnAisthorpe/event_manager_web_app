@@ -15,7 +15,7 @@ def athletes():
 def show(id):
     athlete = athlete_repository.select(id)
     events = event_repository.event_athlete(athlete)
-    return render_template("athletes/show.html", event = events, athlete = athlete)
+    return render_template("athletes/show.html", events = events, athlete = athlete)
 
 # new athlete form
 @athlete_blueprint.route("/athletes/new", methods = ['GET'])
