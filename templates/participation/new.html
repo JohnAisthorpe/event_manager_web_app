@@ -2,22 +2,22 @@
 {% block content %}
 
 <form action="/participation" method = "post">
-    <label for="athlete"> Select an athlete:</label>
+    <label for="athletes"> Select an athlete:</label>
 
-    <select name="athlete_id" id="athlete"> {% for name in athlete %}
+    <select name="athlete_id" id="athletes"> {% for athlete in athletes %}
         <option value="{{ athlete.id}} ">{{ athlete.name }} </option>
         {% endfor %}
     </select>
 
-    <label for="event">Select an event:</label>
-    <select name="event.id" id="event">{% for event in events %}
+    <label for="events">Select an event:</label>
+    <select name="event.id" id="events">{% for event in events %}
         <option value="{{ event.id }}" > {{ event.name }} </option>
         {% endfor %}
     </select>
 
     <label for="position">Add a Position</label>
-    <textarea name="position" id="position" cols="30" rows="1"></textarea>
-    <input type="submit" value="Participation">
+    <textarea name="position" id="position" cols="5" rows="1"></textarea>
+    <input type="submit" value="book">
 </form>
 
 {% endblock %}

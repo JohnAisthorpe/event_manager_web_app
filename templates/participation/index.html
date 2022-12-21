@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Participants</h1>
 
-
-<p> 
-    <a href="/participation/new">New participation</a>
+<h1>Participation</h1>
+<p>
+  <a href="/participation/new">New participation</a>
 </p>
 
+
 <ul>
-    {% for participant in participation %}
-    <li>
-        <p>
-             {{ participant.athlete.name }}
-        </p>
-        <p>"{{ participant.position }}</p>
-    </li>
-    {% endfor %}
+  {% for participation in participations %}
+  <li>
+  <p>{{ participation.athlete.name }} - {{ participation.event.name }} </p>
+
+  <p>{{participation.position}}</p>
+  </li>
+  {% endfor %}
 </ul>
+
+
 {% endblock %}

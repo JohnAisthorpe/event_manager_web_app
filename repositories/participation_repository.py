@@ -14,7 +14,7 @@ def save(participation):
 
 def select_all():
     participations = []
-    sql = "SELECT * FROM participations"
+    sql = "SELECT * FROM participation"
     results = run_sql(sql)
     for row in results:
         athlete = athlete_repository.select(row['athlete_id'])
@@ -32,12 +32,4 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-def athlete_event(event):
-    athletes = []
-    sql = "SELECT athlete.* FROM athlete INNER JOIN participation ON Participation.athlete_id = athlete.id WHERE event_id = %s"
-    values = [event.id]
-    results = run_sql(sql, values)
-    for row in results:
-        athlete = Athlete(row['name'], row['id'])
-        athletes.append(athlete)
-    return athletes
+
