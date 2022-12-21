@@ -2,8 +2,10 @@ nav ul {
     /* get rid of bulletpoints */
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: left;
     align-items: center;
+    grid-area: menu;
   }
 
   nav ul li a:hover {
@@ -18,6 +20,16 @@ nav ul {
   body > h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    grid-area: h1;
+  }
+
+  #grid-container {
+    display: grid;
+    grid-template-areas:
+      'h1 menu'
+      'menu main'
+      'footer footer';
+    grid-template-columns: 3fr 7fr;
   }
 

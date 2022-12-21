@@ -6,7 +6,7 @@ import repositories.athlete_repository as athlete_repository
 import repositories.event_repository as event_repository
 
 def save(participation):
-    sql = "INSERT INTO participation (athlete_id, event_id)  VALUES (%s, %s, %s) RETURNING id"
+    sql = "INSERT INTO participation (athlete_id, event_id)  VALUES (%s, %s) RETURNING id"
     values = [participation.athlete.id, participation.event.id]
     results = run_sql(sql, values)
     participation.id = results[0]['id']
