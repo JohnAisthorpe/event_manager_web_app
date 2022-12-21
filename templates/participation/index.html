@@ -7,15 +7,16 @@
   <button type="button" onclick="window.location.href='/participation/new'" >Book athlete on event</button>
 </p>
 
+<aside>
+  <ul>
+    {% for participation in participations %}
+    <li>
+    <p>{{ participation.athlete.name }} - {{ participation.event.name }} </p>
 
-<ul>
-  {% for participation in participations %}
-  <li>
-  <p>{{ participation.athlete.name }} - {{ participation.event.name }} </p>
-
-  </li>
-  {% endfor %}
-</ul>
+    </li>
+   {% endfor %}
+  </ul>
+</aside>
 
 
 {% endblock %}

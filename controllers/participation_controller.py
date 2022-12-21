@@ -31,7 +31,7 @@ def create_participation():
     event = event_repository.select(event_id)
     participation = Participation(athlete, event)
     participation_repository.save(participation)
-    return redirect('/participation')
+    return redirect('/')
 
 # # new participation form
 # @participation_blueprint.route("/participation/new", methods = ['GET'])

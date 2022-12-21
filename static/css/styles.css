@@ -19,7 +19,6 @@ nav ul {
 nav ul li button:hover {
   /* Style for hovering over links */
   padding: 3px;
-  font-size: ;
   font-family: sans-serif;
   color: black;
   background-color: lightgray;
@@ -33,16 +32,29 @@ nav ul li button {
   color: black;
   background-color: salmon;
   border-radius: 5mm;
-  text-decoration: wavy;
 }
 
 /* Headline */
-body > h1 {
+header > h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   justify-content: left;
   grid-area: title;
   text-align: center;
+  font-size: 15mm;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  justify-content: left;
+  grid-area: title;
+  text-align: center;
+  font-size: 10mm;
+}
+
+p > button {
+  font-size: 6mm;
 }
 
 /* Grid container */
@@ -68,7 +80,9 @@ body > h1 {
   font-size: 1.4rem;
   transition: 0.2s;
   cursor: pointer;
-  animation: spin 1s linear infinite;}
+  animation: spin 1s linear infinite;
+  font-size: 15mm;
+}
 
 .submit-btn {
   background-color: #f1f1f1;
@@ -78,14 +92,65 @@ body > h1 {
   font-size: 1.4rem;
   transition: 0.2s;
   cursor: pointer;
-  font-size: 5mm;}
+}
 
   .submit-btn:hover {
     padding: 3px;
-    font-size: ;
     font-family: sans-serif;
     color: black;
     background-color: lightgray;
     }
 
+  th {
+    padding: 3px;
+    font-size: ;
+    font-family: sans-serif;
+    color: black;
+  }
+
+  td {
+    padding: 3px;
+    font-size: ;
+    font-family: sans-serif;
+    color: black;
+    
+  }
+  
+  h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 3px;
+    font-family: sans-serif;
+    color: black;
+  }
+  
+  ul {
+    font-size: 8mm;
+    text-decoration: none;
+  }
+
+  header button {
+    font-size: 10mm;
+  }
+
+  select, label, input, form {
+    font-size: 8mm;
+  }
+
+  aside ul {
+    list-style: none;
+    background-color: rgba(247, 243, 243, 0.5);
+    font-size: 6mm;
+    border-radius: 5mm;
+    margin: 2mm;
+  }
+
+  
+  body {
+    background: url("https://tinyurl.com/2p8ue8zm") ;
+    background-size: 150% ;
+  }
+  
+  p, th {
+    font-size: 7mm;
+  }
   

@@ -1,28 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1> Events </h1>
+<p>Click on the event names to see the participants.</p>
 <table>
     <tr>
         <th>Name</th>
         <th>Sport</th>
     </tr>
     <!-- new athlete link -->
-    <td>
-        
+    <p>
         <button type="button" onclick="window.location.href='/events/new'">New event</button>
-
-    </td>
-    
+    </p>
 
     {% for event in events %}
     <tr>
         <td>
+            <ul>
             <a href="/events/{{ event.id }}"> {{event.name}} </a>
         </td>
         <td> {{ event.sport }}</td>
         <td>
             <button type="button" onclick="window.location.href='/events/{{ event.id }}/edit'">Edit event</button>
-    
+        </ul>
         </td>
     </tr>
     {% endfor %}
