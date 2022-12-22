@@ -57,13 +57,7 @@ p > button {
   font-size: 6mm;
 }
 
-/* Grid container */
-/* #grid-container {
-  display: grid;
-  grid-template-areas:
-    'title nav' ;
-  grid-template-columns: 2fr 2fr 7fr;
-} */
+
 
 @keyframes spin {
   from {
@@ -84,7 +78,7 @@ p > button {
   font-size: 15mm;
 }
 
-.submit-btn {
+/* .submit-btn {
   background-color: #f1f1f1;
   color: #ee8a14;
   border: 5mm;
@@ -99,7 +93,7 @@ p > button {
     font-family: sans-serif;
     color: black;
     background-color: lightgray;
-    }
+    } */
 
   th {
     padding: 3px;
@@ -124,7 +118,7 @@ p > button {
   }
   
   ul {
-    font-size: 8mm;
+    font-size: 6mm;
     text-decoration: none;
   }
 
@@ -138,10 +132,11 @@ p > button {
 
   aside ul {
     list-style: none;
-    background-color: rgba(247, 243, 243, 0.5);
+    background-color: rgba(168, 213, 230, 0.5);
     font-size: 6mm;
     border-radius: 5mm;
     margin: 2mm;
+    width: fit-content;
   }
 
   
@@ -150,7 +145,58 @@ p > button {
     background-size: 150% ;
   }
   
-  p, th {
-    font-size: 7mm;
+  p, th, td {
+    font-size: 5mm;
+    line-height: 4mm;
+    padding: 1mm;
+  }
+
+  table {
+    background-color: rgba(168, 213, 230, 0.5);
+    border-radius: 5mm;
   }
   
+  ol {
+    font-size: 6mm;
+  }
+
+  h3 {
+    font-size: 8mm;
+  }
+
+  td button {
+    font-size: 5mm;
+    text-align: right;
+  
+  }
+
+  textarea {
+    font-family: Arial, sans-serif;
+    font-size: 5mm;
+    color: #333;
+  }
+
+  aside div {
+    display: flex;
+  }
+
+  p div {
+    display: flex;
+  }
+
+  p button:hover, td button:hover {
+    /* Style for hovering over links */
+    padding: 3px;
+    font-family: sans-serif;
+    color: black;
+    background-color: lightgray;
+  }
+  
+  p button, td button {
+    /* Style for hovering over links */
+    padding: 6px;
+    font-size: ;
+    font-family: sans-serif;
+    color: black;
+    background-color: rgb(183, 210, 139);
+    border-radius: 5mm;

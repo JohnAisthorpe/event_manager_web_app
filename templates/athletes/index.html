@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1> Athletes </h1>
+<p>
+<button type="button" onclick="window.location.href='/athletes/new'">New athlete</button>
+</p>
 <table>
     <tr>
         <th>Name</th>
     </tr>
     <!-- new athlete link -->
     <td>
-    
-        <button type="button" onclick="window.location.href='/athletes/new'">New athlete</button>
 
     </td>
 
@@ -16,10 +17,9 @@
     <tr>
         <td>
             <a href="/athletes/{{ athlete.id }}"> {{athlete.name}}</a> 
-            
-            <form action="/athletes/{{ athlete.id }}/edit">
-                <button>Edit</button>
-                </form>
+        </td>
+        <td>
+                <button type="button" onclick="window.location.href='/athletes/{{ athlete.id }}/edit'">Edit</button>
         </td>
     </tr>
    
