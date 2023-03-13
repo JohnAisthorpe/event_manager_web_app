@@ -36,7 +36,8 @@ nav ul li button {
 
 /* Headline */
 header > h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: roboto;
+  font-weight: bolder;
   display: flex;
   justify-content: left;
   grid-area: title;
